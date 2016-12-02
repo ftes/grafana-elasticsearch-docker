@@ -4,6 +4,8 @@ services:
     build: ./elasticsearch
     ports:
       - 9200:9200
+    volumes:
+      - ./elasticsearch-data:/usr/share/elasticsearch/data
   kibana:
     build: ./kibana
     ports:
@@ -12,3 +14,5 @@ services:
     image: grafana/grafana
     ports:
       - 3000:3000
+    volumes:
+      - ./grafana-data:/var/lib/grafana
